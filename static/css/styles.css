@@ -1,14 +1,14 @@
 :root {
     --background: #f9f9f9;
-    --text: #333;
-    --text-light: #666;
-    --primary: #f8c14b;
-    --secondary: #000;
+    --text: #333333;
+    --text-light: #705d47;
+    --primary: #DAA520;
+    --secondary: #14213d;
     --border: #ddd;
     --headline-background: #1a1a2e;
     --error: red;
     --global-boder-radius: 8px;
-    --header-background: #333333;
+    --header-background: #14213d;
 
     /* Container */
     --container-padding: 20px;
@@ -17,45 +17,61 @@
 
     /* Button */
     --button-padding: 12px 16px;
-    --button-background: #f8c14b;
+    --button-background: #DAA520;
     --button: #fff;
     --button-font-size: 1rem;
-    --button-hover-background: #f8c14b;
+    --button-hover-background: #e0a63d;
 }
 
 body {
     padding-top: 60px;
-    font-family: poppins, sans-serif;
+    font-family: "Lato", sans-serif;
     font-size: 16px;
+    background-color: var(--background); /* Soft white */
+    color: var(--text); /* Balanced contrast */
+    line-height: 1.6; /* Improves readability */
 }
 
-
+.lead {
+    font-size: 18px;
+    font-family: "Lato", sans-serif; /* Clean, modern feel */
+    color: var(--text); /* Warmer, subtle contrast */
+}
 
 .container {
     display: flex;
     flex-direction: column;
     gap: 50px;
+    align-items: center;
 }
 
 section {
     font-family: inherit;
     opacity: 1;
-    padding: 60px 20px;
-    margin-bottom: 40px;
+    padding: 1px;
     align-items: center;
     text-align: center;
-    display: flex;
+    clear: both;
+    display: block;
     flex-direction: column;
+    position: relative;
+    margin-bottom: 0;
     justify-content: center;
     border-radius: var(--global-boder-radius);
 }
 
 section h2 {
-    margin-bottom: 15px;
+    font-family: "Playfair Display", serif; /* Elegant bakery-style font */
+    color: var(--primary); /* Goldenrod for warmth */
+    font-size: 34px; /* Slightly larger for emphasis */
+    margin-bottom: 0;
 }
 
 section p {
-    margin-top: 5px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text-light); /* Warmer, subtle contrast */
+    margin-top: 0;
 }
 
 section::after {
@@ -64,19 +80,11 @@ section::after {
     width: 80%;
     height: 2px;
     background-color: var(--headline-background);
-    margin: 40px auto;
+    margin: 0 auto;
 }
 
 html {
     scroll-padding-top: 80px;
-}
-
-#about {
-    display: relative !important;
-    z-index: 10;
-    opacity: 1 !important;
-    padding-top: 120px;
-    top: 20px;
 }
 
 footer {
@@ -87,28 +95,12 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    font-family: inherit;
 }
 
 footer p {
     margin: 0;
     font-size: 14px;
-}
-
-h1, h2 {
-    color: var(--primary);
-    font-weight: bold;
-    margin-top: 100px; /* Adjust if needed */
-    text-align: center;
-    direction: block !important; /* Ensures text direction is block */
-    display: block !important;
-}
-
-@media (max-width: 768px) {
-    h1, h2 {
-        font-size: 24px; /* Adjust font size for smaller screens */
-        margin-top: 120px;
-    }
-    
 }
 
 #topBtn {
@@ -163,9 +155,17 @@ button:hover, .btn:hover, .navbar-toggler:hover {
     align-items: center;
 }
 
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .navbar-brand img {
-    width: 45px;
+    width: 60px;
     height: auto;
+    margin-left: 10px;
+    padding: 5px;
 }
 
 .navbar-collapse {
@@ -226,9 +226,11 @@ button:hover, .btn:hover, .navbar-toggler:hover {
 
 
 span.fw-bold {
-    display: inline-block;
-    line-height: 1.2;
-    font-size: 25px;
+    line-height: 1.3; /* Slightly increased for readability */
+    font-size: 26px; /* Enhancing emphasis */
+    font-weight: 700; /* Ensures boldness */
+    color: var(--primary); /* Goldenrod accent for warmth */
+    font-family: "Playfair Display", serif; /* Elegant bakery-style typography */
 }
 
 @media (max-width: 768px) {
@@ -259,14 +261,13 @@ div {
     border: none !important; /* Removes border */
     background: transparent;
     color: var(--primary);
-    font-family: inherit !important;
+    font-family: "Lato", sans-serif !important;
     display: list-item !important;
 }
 
 .list-group {
     border: none;
     box-shadow: none;
-    font-family: inherit !important;
     display: block !important;
     list-style-type: decimal;
     list-style-position: inside;
@@ -275,7 +276,6 @@ div {
 .key-list {
     border: none;
     box-shadow: none;
-    font-family: inherit !important;
     display: block !important;
     list-style-type: none;
     list-style-position: inside;
@@ -293,8 +293,13 @@ div {
 }
 
 .card-body {
-    color: var(--secondary-color); /* Black text */
-    font-size: 1rem;
+    font-size: 1rem; /* Balanced readability */
+    font-family: "Lato", sans-serif; /* Clean, modern feel */
+}
+
+.card-body h3, h3 {
+    color: var(--primary) !important;
+    font-family: "Playfair Display", serif;
 }
 
 .card:hover {

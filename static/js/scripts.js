@@ -30,12 +30,18 @@ document.addEventListener("click", (event) => {
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function(event) {
         event.preventDefault();
+
+        // Smooth scroll to the target section
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         window.scrollTo({
             top: targetElement.offsetTop - 120,
             behavior: 'smooth'
         });
+
+        // Collapse the navbar after clicking a link
+        let navbar = document.querySelector(".navbar-collapse");
+        bootstrap.Collapse.getInstance(navbar).hide();
     });
 }
 );
