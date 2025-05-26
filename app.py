@@ -1,6 +1,6 @@
 from flask import Flask, send_file
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 @app.route('/')
 def home():
