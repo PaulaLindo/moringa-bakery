@@ -19,7 +19,7 @@ window.addEventListener('scroll', () => {
             navbar.classList.remove('navbar-shrink');
         }
     }
-    
+
     // Highlight nav link for section in view
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -80,8 +80,8 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
                     // Set active state
                     document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
-                }, needsDelay ? 400 : 0); // Wait only if menu was open
+                    this.classList.add('active');
+                }); // Wait only if menu was open
             }
         }
     });
